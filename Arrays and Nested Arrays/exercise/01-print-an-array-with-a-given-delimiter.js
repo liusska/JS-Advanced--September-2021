@@ -1,4 +1,6 @@
-const solve = (arr, delimiter) => arr.join(delimiter);
+function solve(arr, delimiter){
+        return arr.join(delimiter);
+}
 
 
 

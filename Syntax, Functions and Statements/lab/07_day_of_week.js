@@ -10,7 +10,6 @@ function solve(day){
         default : console.log('error'); break;
     }
 }
-
 solve('Monday')
 solve('Friday')
 solve('Invalid')

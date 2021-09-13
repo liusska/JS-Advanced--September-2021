@@ -1,12 +1,14 @@
-function solve(n, m){
-    let num1 = Number(n);
-    let num2 = Number(m);
+function solve(param1, param2){
+    n = Number(param1);
+    m = Number(param2);
     let result = 0;
-    for (let i = num1; i <= num2; i++){
+
+    for (let i=n; i <= m; i++){
         result += i;
     }
-    console.log(result)
+    return result;
 }
 
-solve('1', '5' )
-solve('-8', '20')
+
+console.log(solve('1', '5' ))
+console.log(solve('-8', '20'))

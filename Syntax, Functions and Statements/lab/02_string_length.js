@@ -1,17 +1,9 @@
-function strLen(str1, str2, str3){
-    let avgLength;
-    let sumLength;
-
-    let firstLength = str1.length
-    let secondLength = str2.length
-    let thirdLength = str3.length
-
-    sumLength = firstLength + secondLength + thirdLength
-    avgLength = Math.floor(sumLength / 3)
-
-    console.log(sumLength)
-    console.log(avgLength)
+function strlen(a, b, c){
+    let total = a.length + b.length + c.length
+    let avg = Math.floor(total / 3)
+    console.log(total)
+    console.log(avg) 
 }
 
-strLen('chocolate', 'ice cream', 'cake')
-strLen('pasta', '5', '22.3')
+strlen('chocolate', 'ice cream', 'cake')
+strlen('pasta', '5', '22.3')

@@ -1,6 +1,7 @@
-function echo(input){
-    console.log(input.length);
-    console.log(input);
+function solve(data){
+    console.log(data.length)
+    console.log(data);
 }
 
-echo('Hello, JavaScript!')
+
+solve('Hello, JavaScript!');

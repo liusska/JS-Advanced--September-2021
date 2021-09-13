@@ -1,11 +1,11 @@
-function solve(count=5){
-    for (let i=0; i<count; i++){
-        let stars = ''
-        for (let j=0; j<count; j++){
-            stars += '* '
+function solve(n=5){
+    for (let i=0; i<n; i++){
+        let square = '';
+        for (let j=0; j<n; j++){
+            square += '* ';
         }
-        console.log(stars)
+        console.log(square) ; 
     }
+    
 }
-
-solve(2)
+solve()
