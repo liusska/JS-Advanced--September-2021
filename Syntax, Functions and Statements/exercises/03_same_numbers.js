@@ -1,17 +1,17 @@
 function solve(number){
-    const string = number.toString();
-    let isSame = true;
+    let numberToString = number.toString();
+    let equals_digits = true;
     let sum = 0;
 
-    for(let i = 0; i < string.length; i++){
-        let current = Number(string[i])
-        let next = string[i+1]
-        if(string[i] !== string[i+1] && next !== undefined){
-            isSame = false;
-        }
-        sum += current;
+    for (let i=0; i<numberToString.length; i++){
+        let next = numberToString[i+1];
+        if (numberToString[i] !== numberToString[i+1] && next !== undefined){
+            equals_digits = false;
+        } 
+        sum += parseInt(numberToString[i])
     }
-    return `${isSame}\n${sum}`
+
+    return `${equals_digits}\n${sum}`
 }
 
 console.log(solve(2222222));

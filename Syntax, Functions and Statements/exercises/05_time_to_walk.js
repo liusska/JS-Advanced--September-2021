@@ -1,3 +1,4 @@
+
 function solve(steps, footprint, speedKmH){
     const speed = speedKmH*1000/3600;
     const distance = steps * footprint;
@@ -12,6 +13,7 @@ function solve(steps, footprint, speedKmH){
 
     return `${hours}:${minutes}:${seconds}`
 }
+
 
 console.log(solve(4000, 0.60, 5))
 console.log(solve(2564, 0.70, 5.5))
