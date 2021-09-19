@@ -1,11 +1,10 @@
-function solve(arr, startFlavor, endFlavor){
-        let start = arr.indexOf(startFlavor);
-        let end = arr.indexOf(endFlavor);
-
-        return arr.slice(start, end + 1)
+function pie(pies, startPie, endPie){
+    const startIdx = pies.indexOf(startPie);
+    const endIdx = pies.indexOf(endPie);
+    return  pies.slice(startIdx, endIdx + 1);
 }
 
-console.log(solve(['Pumpkin Pie',
+console.log(pie(['Pumpkin Pie',
             'Key Lime Pie',
             'Cherry Pie',
             'Lemon Meringue Pie',
@@ -15,7 +14,7 @@ console.log(solve(['Pumpkin Pie',
 
 ))
 
-console.log(solve(['Apple Crisp',
+console.log(pie(['Apple Crisp',
             'Mississippi Mud Pie',
             'Pot Pie',
             'Steak and Cheese Pie',

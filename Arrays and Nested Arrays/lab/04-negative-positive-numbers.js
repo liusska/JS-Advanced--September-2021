@@ -1,14 +1,14 @@
-function solve(arr){
-    const new_arr = [];
+function solve(numbers){
+    const result = [];
 
-    for (let el of arr){
-        if (el < 0){
-            new_arr.unshift(el);
-        }else{
-            new_arr.push(el);
+    for (let num of numbers){
+        if (num < 0){
+            result.unshift(num);
+        }else {
+            result.push(num);
         }
     }
-    return new_arr.join('\n')
+    console.log(result.join('\n'));
 }
 
 console.log(solve([7, -2, 8, 9]));

@@ -1,5 +1,5 @@
 function solve(numbers){
-    numbers.sort((a, b) => a- b);
+    numbers.sort((a, b) => a - b);
 
     return `${numbers[0]} ${numbers[1]}`
 }

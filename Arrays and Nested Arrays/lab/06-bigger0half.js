@@ -1,6 +1,6 @@
 function solve(numbers){
     return numbers
-        .sort((a, b) => a- b)
+        .sort((a, b) => a - b)
         .slice(numbers.length / 2)
 
 }
