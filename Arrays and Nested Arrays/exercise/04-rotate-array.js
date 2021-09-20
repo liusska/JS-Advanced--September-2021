@@ -4,7 +4,7 @@ function solve(array, rotateCount){
         array.unshift(currentElement)
     }
 
-    return array.join(" ")
+    return array.join(' ')
 }
 
 console.log(solve(['1',

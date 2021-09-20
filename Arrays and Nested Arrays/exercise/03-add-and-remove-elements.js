@@ -1,33 +1,37 @@
-function solve(actions) {
-    let data = [];
-    let number = 1
-
-    for (let i = 0; i < actions.length; i++){
-        if (actions[i] === 'add'){
-            data.push(number);
-        }else if (actions[i] === 'remove'){
+function solve(commands){
+    let count = 0;
+    const data = []
+    for (let command of commands){
+        count += 1;
+        if (command === 'add'){
+            data.push(count);
+        }else {
             data.pop();
         }
-        number++
     }
-
-    return data.length !== 0 ? data.join("\n") : "Empty";
+    return data.length !== 0? data.join('\n') : 'Empty';
 }
 
-console.log(solve(['add',
-    'add',
-    'add',
-    'add']
+console.log(solve(
+    ['add',
+        'add',
+        'add',
+        'add']
+
 ))
 
-console.log(solve(['add',
-    'add',
-    'remove',
-    'add',
-    'add']
+console.log(solve(
+    ['add',
+        'add',
+        'remove',
+        'add',
+        'add']
+
 ))
 
-console.log(solve(['remove',
-    'remove',
-    'remove']
+console.log(solve(
+    ['remove',
+        'remove',
+        'remove']
+
 ))

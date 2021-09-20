@@ -1,7 +1,6 @@
-function solve(arr, delimiter){
-        return arr.join(delimiter);
+function solve(data, delimiter){
+        return data.join(delimiter);
 }
-
 
 
 console.log(solve(['One',
