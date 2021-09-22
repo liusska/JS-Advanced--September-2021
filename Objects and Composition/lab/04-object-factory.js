@@ -1,16 +1,17 @@
 function factory(library, orders){
-    const result = [];
-    for (let order of orders){
-        const composed = Object.assign({}, order.template);
+    return orders.map(compose);
+
+    function compose(order){
+
+        const result = Object.assign({}, order.template);
 
         for (let part of order.parts){
-            composed[part] = library[part];
+            result[part] = library[part];
         }
-        result.push(composed)
-    }
-    return result;
-}
 
+        return result;
+    }
+}
 
 const library = {
     print: function () {
@@ -23,7 +24,6 @@ const library = {
         console.log(`${this.name} is playing '${track}' by ${artist}`);
     },
 };
-
 const orders = [
     {
         template: { name: 'ACME Printer'},
@@ -40,8 +40,9 @@ const orders = [
     {
         template: { name: 'BoomBox Stereo'},
         parts: ['play']
-    },
+    }
 ];
-
 const products = factory(library, orders);
 console.log(products);
+
+

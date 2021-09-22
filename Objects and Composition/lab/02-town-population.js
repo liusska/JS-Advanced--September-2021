@@ -1,18 +1,26 @@
 function solve(townsArray){
     const towns = {};
+    for (let data of townsArray){
+        const tokens = data.split(' <-> ');
 
-    for (let townAsString of townsArray){
-        let [name, population] = townAsString.split(' <-> ');
-        population = Number(population);
+        const name = tokens[0];
+        const population = Number(tokens[1]);
 
-        if (towns[name] === undefined)
+        if (towns[name] === undefined){
             towns[name] = 0;
-        towns[name] += population
+        }
+        towns[name] += population;
     }
-
-    for (let name in towns) {
+    for (const name in towns){
         console.log(`${name} : ${towns[name]}`)
     }
+
+    // variant 2
+    
+    // for (const [name, population] in Object.entries(towns)){
+    //     console.log(`${name} : ${population}`)
+    // }
+
 }
 
 solve(['Sofia <-> 1200000',
@@ -21,6 +29,9 @@ solve(['Sofia <-> 1200000',
     'Washington <-> 2345000',
     'Las Vegas <-> 1000000']
 )
+
+console.log('------------------')
+
 solve(['Istanbul <-> 100000',
     'Honk Kong <-> 2100004',
     'Jerusalem <-> 2352344',

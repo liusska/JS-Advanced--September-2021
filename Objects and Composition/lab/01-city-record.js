@@ -1,8 +1,8 @@
 function solve(name, population, treasury){
     const dict = {
-        'name': name,
-        'population': population,
-        'treasury': treasury,
+        name,
+        population,
+        treasury,
     }
     return dict
 }
