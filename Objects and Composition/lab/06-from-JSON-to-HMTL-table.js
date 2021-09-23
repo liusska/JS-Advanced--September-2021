@@ -24,9 +24,8 @@ function JsonToHtmlTable(json) {
         result += '</tr>';
         return result
     }
-    function escapeHtml(value) {
-        return value;
-    }
+
+    function escapeHtml(value) {}
     console.log(outputArr.join('\n'));
 }
 
