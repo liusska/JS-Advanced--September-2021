@@ -1,30 +1,58 @@
 function solve(arr) {
-    let countSongs =  arr.shift();
-    let list = arr.pop();
 
-    const playlists = {};
-
-    for (let el of arr){
-        let [typeList, nameSong, time] = el.split('_');
-        if (playlists[typeList] === undefined){
-            playlists[typeList] = []
+    class Song{
+        constructor(type, name, time){
+            this.type = type;
+            this.name = name;
+            this.time = time;
         }
-        playlists[typeList].push([nameSong, time])
     }
 
-    if (list !== 'all'){
-        for (const key of Object.keys(playlists)){
-            if (key === list){
-                for (let song of (playlists[key])){
-                    console.log(song[0])
-                }
-            }
-        }
+    let songs = []
+    let numberOfSongs = arr.shift()
+    let typeSong = arr.pop();
+
+    for (let i = 0; i < numberOfSongs; i++) {
+        let [type, name, time] = arr[i].split('_');
+        let song = new Song(type, name, time);
+        songs.push(song)
+    }
+
+    if (typeSong === 'all'){
+        songs.forEach((el) => console.log(el.name));
     }else{
-        for(let key of Object.keys(playlists)){
-            console.log(playlists[key][0][0]);
-        }
+        let filteredSong = songs.filter((el) => el.type === typeSong);
+        filteredSong.forEach((el) => console.log(el.name))
     }
+
+
+    // let countSongs =  arr.shift();
+    // let list = arr.pop();
+    //
+    // const playlists = {};
+    //
+    // for (let el of arr){
+    //     let [typeList, nameSong, time] = el.split('_');
+    //     if (playlists[typeList] === undefined){
+    //         playlists[typeList] = []
+    //     }
+    //     playlists[typeList].push([nameSong, time])
+    // }
+    //
+    // if (list !== 'all'){
+    //     for (const key of Object.keys(playlists)){
+    //         if (key === list){
+    //             for (let song of (playlists[key])){
+    //                 console.log(song[0])
+    //             }
+    //         }
+    //     }
+    // }else{
+    //     for(let key of Object.keys(playlists)){
+    //         console.log(playlists[key][0][0]);
+    //     }
+    // }
+    
 }
 
 solve([3,
