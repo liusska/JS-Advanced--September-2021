@@ -13,5 +13,5 @@ function deleteByEmail() {
     }else{
         messageOperation.textContent = 'Not found.'
     }
-    inputElement.value = '';
+    inputElement = '';
 }
