@@ -39,7 +39,7 @@ function createComputerHierarchy(){
 
             this.weight = weight;
             this.color = color;
-            this._battery = battery;
+            this.battery = battery;
         }
 
         get battery() {
@@ -58,8 +58,8 @@ function createComputerHierarchy(){
     class Desktop extends Computer{
         constructor(manufacturer, processorSpeed, ram, hardDiskSpace, keyboard, monitor) {
             super(manufacturer, processorSpeed, ram, hardDiskSpace);
-            this._keyboard = keyboard;
-            this._monitor = monitor;
+            this.keyboard = keyboard;
+            this.monitor = monitor;
         }
 
         get keyboard() {
