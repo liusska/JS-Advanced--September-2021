@@ -1,5 +1,5 @@
-import { p1 } from './puzzles.js';
-import  { generateBoard, button } from './board.js';
+import {generateBoard, button} from './board.js';
+import {init} from './import.js';
 
 // Load puzzle
 // Generate DOM elements
@@ -9,14 +9,13 @@ import  { generateBoard, button } from './board.js';
 window.addEventListener('DOMContentLoaded', start);
 
 
-function start(){
+function start() {
     const main = document.querySelector('main');
-    const cells = generateBoard(p1, main);
-    // const cells = generateBoard(
-    //     new Array(3).fill(
-    //         new Array(3).fill(
-    //             (new Array(9).fill(0))
-    //     )), main);
+    let cells = {
+        blocks: [[]],
+        rows: [[]],
+        columns: [[]]
+    }
 
     const checkBtn = document.getElementById('checkBtn');
     checkBtn.addEventListener('click', () => {
@@ -31,18 +30,20 @@ function start(){
         uncheckBtn.replaceWith(checkBtn);
     });
 
+    init((puzzle) => cells = generateBoard(puzzle, main));
+
 }
 
-function check(cells){
+function check(cells) {
     const numbers = new Set();
 
     for (let cell of cells) {
-        if (cell.value !== ''){
+        if (cell.value !== '') {
             numbers.add(cell.value);
         }
     }
 
-    if(numbers.size !== 9){
+    if (numbers.size !== 9) {
         cells.forEach(c => c.classList.add('error'));
     }
 }

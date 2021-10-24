@@ -18,10 +18,12 @@ export function generateBoard(values, main){
             columns[colIndex][rowIndex] = cell;
         }
     }
+    main.replaceChildren(
+        clusters[0].element,
+        clusters[1].element,
+        clusters[2].element
+    );
 
-    main.appendChild(clusters[0].element);
-    main.appendChild(clusters[1].element);
-    main.appendChild(clusters[2].element);
 
     return {
         blocks,
@@ -76,7 +78,7 @@ function cell(value){
 
         element.addEventListener('input', () => {
             const newValue = Number(element.value)
-            if(element.value === '' || (element.value.length === 1 && newValue >= 1 && newValue <= 9)){
+            if(element.value === '' || (element.value.length === 1 && newValue >= 1)){
                 currentValue = element.value;
 
             }else{
@@ -88,7 +90,7 @@ function cell(value){
 }
 
 
-function e(type, attr, ...content) {
+export function e(type, attr, ...content) {
     const element = document.createElement(type);
 
     for (let prop in attr) {
